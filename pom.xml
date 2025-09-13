@@ -5,15 +5,15 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.1</version>
+		<version>3.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.gfg</groupId>
-	<artifactId>E-WALLET</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>EWALLET</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>E-WALLET</name>
-	<description>E-WALLET like Paytm</description>
+    <name>EWALLET</name>
+	<description>EWALLET like Paytm</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -25,7 +25,7 @@
         <module>User-Service</module>
 		<module>Wallet-Service</module>
 		<module>Notification-service</module>
-		<module>utils</module>
+        <module>utils</module>
         <module>Transaction-Service</module>
     </modules>
     <scm>
@@ -44,20 +44,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
 		</dependency>
 
 		<dependency>
@@ -85,10 +76,32 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
